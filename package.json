@@ -1,0 +1,30 @@
+{
+  "name": "@sillyal/dominion",
+  "version": "0.0.1",
+  "description": "Representation of Dominion, a deck-building card game created by Donald X. Vaccarino and published by Rio Grande Games.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "/lib"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --passWithNoTests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sillyal/dominion.git"
+  },
+  "author": "Sillyal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sillyal/dominion/issues"
+  },
+  "homepage": "https://github.com/sillyal/dominion#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.11",
+    "jest": "^24.6.0",
+    "ts-jest": "^24.0.1",
+    "typescript": "^3.4.1"
+  }
+}
