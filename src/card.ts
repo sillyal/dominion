@@ -9,7 +9,7 @@ type CardName =
   | "Smithy";
 
 export abstract class Card {
-  public readonly name: CardName;
+  public readonly name: string;
   public readonly cost: number;
 
   protected constructor(name: string, cost: number) {
