@@ -1,9 +1,11 @@
 {
   "name": "@sillyal/dominion",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Representation of Dominion, a deck-building card game created by Donald X. Vaccarino and published by Rio Grande Games.",
   "keywords": [
-    "Dominion", "Card Game", "Deck-building"
+    "Dominion",
+    "Card Game",
+    "Deck-building"
   ],
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
