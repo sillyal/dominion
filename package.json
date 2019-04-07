@@ -9,7 +9,8 @@
   ],
   "scripts": {
     "build": "tsc",
-    "test": "jest --passWithNoTests"
+    "test": "jest",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,10 @@
   "devDependencies": {
     "@types/jest": "^24.0.11",
     "jest": "^24.6.0",
+    "prettier": "1.16.4",
     "ts-jest": "^24.0.1",
+    "tslint": "^5.15.0",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.4.1"
   }
 }
