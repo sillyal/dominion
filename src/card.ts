@@ -29,7 +29,7 @@ export abstract class VictoryCard extends Card {
   }
 }
 
-class EstateCard extends VictoryCard {
+export class EstateCard extends VictoryCard {
   constructor() {
     super("Estate", 2, 1);
   }
@@ -41,7 +41,7 @@ class EstateCard extends VictoryCard {
 
 export const Estate = new EstateCard();
 
-class DuchyCard extends VictoryCard {
+export class DuchyCard extends VictoryCard {
   constructor() {
     super("Duchy", 5, 3);
   }
@@ -53,7 +53,7 @@ class DuchyCard extends VictoryCard {
 
 export const Duchy = new DuchyCard();
 
-class ProvinceCard extends VictoryCard {
+export class ProvinceCard extends VictoryCard {
   constructor() {
     super("Province", 8, 5);
   }
@@ -65,7 +65,7 @@ class ProvinceCard extends VictoryCard {
 
 export const Province = new ProvinceCard();
 
-class CurseCard extends VictoryCard {
+export class CurseCard extends VictoryCard {
   constructor() {
     super("Curse", 0, -1);
   }
@@ -77,7 +77,7 @@ class CurseCard extends VictoryCard {
 
 export const Curse = new CurseCard();
 
-class GardensCard extends VictoryCard {
+export class GardensCard extends VictoryCard {
   constructor() {
     // TODO Evaluate points for Gardens
     super("Gardens", 4, 0);
@@ -103,7 +103,7 @@ export abstract class TreasureCard extends Card {
   }
 }
 
-class CopperCard extends TreasureCard {
+export class CopperCard extends TreasureCard {
   constructor() {
     super("Copper", 0, 1);
   }
@@ -115,7 +115,7 @@ class CopperCard extends TreasureCard {
 
 export const Copper = new CopperCard();
 
-class SilverCard extends TreasureCard {
+export class SilverCard extends TreasureCard {
   constructor() {
     super("Silver", 3, 2);
   }
@@ -127,7 +127,7 @@ class SilverCard extends TreasureCard {
 
 export const Silver = new SilverCard();
 
-class GoldCard extends TreasureCard {
+export class GoldCard extends TreasureCard {
   constructor() {
     super("Gold", 6, 3);
   }
@@ -145,7 +145,7 @@ export function isTreasureCard(card: Card): card is TreasureCard {
 
 export abstract class ActionCard extends Card {}
 
-class CellarCard extends ActionCard {
+export class CellarCard extends ActionCard {
   constructor() {
     super("Cellar", 2);
   }
@@ -157,7 +157,7 @@ class CellarCard extends ActionCard {
 
 export const Cellar = new CellarCard();
 
-class ChapelCard extends ActionCard {
+export class ChapelCard extends ActionCard {
   constructor() {
     super("Chapel", 2);
   }
@@ -169,7 +169,7 @@ class ChapelCard extends ActionCard {
 
 export const Chapel = new ChapelCard();
 
-class MoatCard extends ActionCard {
+export class MoatCard extends ActionCard {
   constructor() {
     super("Moat", 2);
   }
@@ -181,7 +181,7 @@ class MoatCard extends ActionCard {
 
 export const Moat = new MoatCard();
 
-class HarbingerCard extends ActionCard {
+export class HarbingerCard extends ActionCard {
   constructor() {
     super("Harbinger", 3);
   }
@@ -193,7 +193,7 @@ class HarbingerCard extends ActionCard {
 
 export const Harbinger = new HarbingerCard();
 
-class MerchantCard extends ActionCard {
+export class MerchantCard extends ActionCard {
   constructor() {
     super("Merchant", 3);
   }
@@ -205,7 +205,7 @@ class MerchantCard extends ActionCard {
 
 export const Merchant = new MerchantCard();
 
-class VassalCard extends ActionCard {
+export class VassalCard extends ActionCard {
   constructor() {
     super("Vassal", 3);
   }
@@ -217,7 +217,7 @@ class VassalCard extends ActionCard {
 
 export const Vassal = new VassalCard();
 
-class VillageCard extends ActionCard {
+export class VillageCard extends ActionCard {
   constructor() {
     super("Village", 3);
   }
@@ -229,7 +229,7 @@ class VillageCard extends ActionCard {
 
 export const Village = new VillageCard();
 
-class WorkshopCard extends ActionCard {
+export class WorkshopCard extends ActionCard {
   constructor() {
     super("Workshop", 3);
   }
@@ -241,7 +241,7 @@ class WorkshopCard extends ActionCard {
 
 export const Workshop = new WorkshopCard();
 
-class MilitiaCard extends ActionCard {
+export class MilitiaCard extends ActionCard {
   constructor() {
     super("Militia", 4);
   }
@@ -253,7 +253,7 @@ class MilitiaCard extends ActionCard {
 
 export const Militia = new MilitiaCard();
 
-class MoneylenderCard extends ActionCard {
+export class MoneylenderCard extends ActionCard {
   constructor() {
     super("Moneylender", 4);
   }
@@ -265,7 +265,7 @@ class MoneylenderCard extends ActionCard {
 
 export const Moneylender = new MoneylenderCard();
 
-class PoachCard extends ActionCard {
+export class PoachCard extends ActionCard {
   constructor() {
     super("Poacher", 4);
   }
@@ -277,7 +277,7 @@ class PoachCard extends ActionCard {
 
 export const Poacher = new PoachCard();
 
-class RemodelCard extends ActionCard {
+export class RemodelCard extends ActionCard {
   constructor() {
     super("Remodel", 4);
   }
@@ -289,7 +289,7 @@ class RemodelCard extends ActionCard {
 
 export const Remodel = new RemodelCard();
 
-class SmithyCard extends ActionCard {
+export class SmithyCard extends ActionCard {
   constructor() {
     super("Smithy", 4);
   }
@@ -301,7 +301,7 @@ class SmithyCard extends ActionCard {
 
 export const Smithy = new SmithyCard();
 
-class ThroneRoomCard extends ActionCard {
+export class ThroneRoomCard extends ActionCard {
   constructor() {
     super("ThroneRoom", 4);
   }
@@ -313,7 +313,7 @@ class ThroneRoomCard extends ActionCard {
 
 export const ThroneRoom = new ThroneRoomCard();
 
-class BanditCard extends ActionCard {
+export class BanditCard extends ActionCard {
   constructor() {
     super("Bandit", 5);
   }
@@ -325,7 +325,7 @@ class BanditCard extends ActionCard {
 
 export const Bandit = new BanditCard();
 
-class FestivalCard extends ActionCard {
+export class FestivalCard extends ActionCard {
   constructor() {
     super("Festival", 5);
   }
@@ -337,7 +337,7 @@ class FestivalCard extends ActionCard {
 
 export const Festival = new FestivalCard();
 
-class LaboratoryCard extends ActionCard {
+export class LaboratoryCard extends ActionCard {
   constructor() {
     super("Laboratory", 5);
   }
@@ -349,7 +349,7 @@ class LaboratoryCard extends ActionCard {
 
 export const Laboratory = new LaboratoryCard();
 
-class LibraryCard extends ActionCard {
+export class LibraryCard extends ActionCard {
   constructor() {
     super("Library", 5);
   }
@@ -361,7 +361,7 @@ class LibraryCard extends ActionCard {
 
 export const Library = new LibraryCard();
 
-class MarketCard extends ActionCard {
+export class MarketCard extends ActionCard {
   constructor() {
     super("Market", 5);
   }
@@ -373,7 +373,7 @@ class MarketCard extends ActionCard {
 
 export const Market = new MarketCard();
 
-class MineCard extends ActionCard {
+export class MineCard extends ActionCard {
   constructor() {
     super("Mine", 5);
   }
@@ -385,7 +385,7 @@ class MineCard extends ActionCard {
 
 export const Mine = new MineCard();
 
-class SentryCard extends ActionCard {
+export class SentryCard extends ActionCard {
   constructor() {
     super("Sentry", 5);
   }
@@ -397,7 +397,7 @@ class SentryCard extends ActionCard {
 
 export const Sentry = new SentryCard();
 
-class WitchCard extends ActionCard {
+export class WitchCard extends ActionCard {
   constructor() {
     super("Witch", 5);
   }
@@ -409,7 +409,7 @@ class WitchCard extends ActionCard {
 
 export const Witch = new WitchCard();
 
-class ArtisanCard extends ActionCard {
+export class ArtisanCard extends ActionCard {
   constructor() {
     super("Artisan", 6);
   }
