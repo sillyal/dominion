@@ -425,7 +425,7 @@ export function isActionCard(card: Card): card is ActionCard {
   return !isVictoryCard(card) && !isTreasureCard(card);
 }
 
-interface CardVisitor {
+export interface CardVisitor {
   visitEstate(estate: EstateCard): void;
   visitDuchy(duchy: DuchyCard): void;
   visitProvince(province: ProvinceCard): void;
