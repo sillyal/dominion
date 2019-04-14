@@ -13,7 +13,7 @@ export class Player {
   public setAside: Card[] = [];
   public hand: Card[] = [];
   public pool?: ActivePool;
-  private played: Card[] = [];
+  public played: Card[] = [];
 
   constructor(deck: Card[], discard: Card[], hand: Card[]) {
     this.deck = deck;
