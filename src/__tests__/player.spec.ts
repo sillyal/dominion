@@ -54,6 +54,15 @@ describe("Player", () => {
     expect(player.deck[1]).toBe(Copper);
   });
 
+  it("puts a card from hand to deck", () => {
+    const player = new Player([Copper], [], [Silver]);
+    const movedBack = player.putACardFromHandOntoDeck(Silver);
+    expect(movedBack).toBe(Silver);
+    expect(player.deck.length).toBe(2);
+    expect(player.deck[0]).toBe(Silver);
+    expect(player.deck[1]).toBe(Copper);
+  });
+
   it("trashes a card", () => {
     const player = new Player([], [], [Copper]);
     const trashed = player.trashACard(Copper);

@@ -79,6 +79,16 @@ export class Player {
     return toMoveBack;
   }
 
+  public putACardFromHandOntoDeck(card: Card): Card | undefined {
+    const index = this.hand.indexOf(card);
+    if (index < 0) {
+      return;
+    }
+    const toMove = this.hand.splice(index, 1)[0];
+    this.deck = [toMove, ...this.deck];
+    return toMove;
+  }
+
   public trashACard(card: Card): Card | undefined {
     const index = this.hand.indexOf(card);
     if (index < 0) {
