@@ -241,6 +241,18 @@ export class WorkshopCard extends ActionCard {
 
 export const Workshop = new WorkshopCard();
 
+export class BureaucratCard extends ActionCard {
+  constructor() {
+    super("Bureaucrat", 4);
+  }
+
+  public accept(visitor: CardVisitor): void {
+    visitor.visitBureaucrat(this);
+  }
+}
+
+export const Bureaucrat = new BureaucratCard();
+
 export class MilitiaCard extends ActionCard {
   constructor() {
     super("Militia", 4);
@@ -444,6 +456,7 @@ export interface CardVisitor {
   visitVassal(vassal: VassalCard): void;
   visitVillage(village: VillageCard): void;
   visitWorkshop(workshop: WorkshopCard): void;
+  visitBureaucrat(bureaucrat: BureaucratCard): void;
 
   visitMilitia(militia: MilitiaCard): void;
   visitMoneylender(moneylender: MoneylenderCard): void;
