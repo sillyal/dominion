@@ -1,19 +1,20 @@
 import { Card } from "./card";
 import { shuffle } from "./utils";
 
-export class ActivePool {
-  public actions: number = 1;
-  public buys: number = 1;
-  public coins: number = 0;
+export interface ActivePool {
+  actions: number;
+  buys: number;
+  coins: number;
 }
 
 export class Player {
-  public discard: Card[] = [];
-  public deck: Card[] = [];
-  public setAside: Card[] = [];
-  public hand: Card[] = [];
-  public pool?: ActivePool;
-  public played: Card[] = [];
+  public reacting: boolean = false;
+  private discard: Card[] = [];
+  private deck: Card[] = [];
+  private setAside: Card[] = [];
+  private hand: Card[] = [];
+  private pool?: ActivePool;
+  private played: Card[] = [];
 
   constructor(deck: Card[], discard: Card[], hand: Card[]) {
     this.deck = deck;
@@ -21,11 +22,23 @@ export class Player {
     this.hand = hand;
   }
 
-  public setup() {
-    this.pool = new ActivePool();
+  public isPlaying(): boolean {
+    return this.pool !== undefined;
   }
 
-  public cleanup() {
+  public setup(pool?: ActivePool): void {
+    this.pool = pool || { actions: 1, buys: 1, coins: 0 };
+  }
+
+  public updatePool(pool: ActivePool): void {
+    if (this.pool) {
+      this.pool.actions += pool.actions;
+      this.pool.buys += pool.buys;
+      this.pool.coins += pool.coins;
+    }
+  }
+
+  public cleanup(): void {
     this.pool = undefined;
     this.discard = [
       ...this.discard,
@@ -107,16 +120,36 @@ export class Player {
     return setAside;
   }
 
-  public buyACard(card: Card) {
+  public buyACard(card: Card): void {
     this.discard = [...this.discard, card];
   }
 
-  public gainACard(card: Card) {
+  public gainACard(card: Card): void {
     this.discard = [...this.discard, card];
   }
 
-  public gainACardToHand(card: Card) {
+  public gainACardToHand(card: Card): void {
     this.hand = [...this.hand, card];
+  }
+
+  public getDiscard(): Card[] {
+    return this.discard;
+  }
+
+  public getDeck(): Card[] {
+    return this.deck;
+  }
+
+  public getSetAside(): Card[] {
+    return this.setAside;
+  }
+
+  public getHand(): Card[] {
+    return this.hand;
+  }
+
+  public getPlayed(): Card[] {
+    return this.played;
   }
 
   private shuffle(): void {
