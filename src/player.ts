@@ -38,6 +38,18 @@ export class Player {
     }
   }
 
+  public canPlayActionCard(): boolean {
+    return this.pool !== undefined && this.pool.actions > 0;
+  }
+
+  public canBuyCard(): boolean {
+    return this.pool !== undefined && this.pool.buys > 0;
+  }
+
+  public getCoins(): number {
+    return this.pool ? this.pool.coins : 0;
+  }
+
   public cleanup(): void {
     this.pool = undefined;
     this.discard = [
