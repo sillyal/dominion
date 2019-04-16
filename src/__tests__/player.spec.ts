@@ -6,30 +6,30 @@ describe("Player", () => {
     const player = new Player([Copper, Silver], [], []);
     const drawn = player.drawNCards(1);
     expectExactlyOneCard(drawn, Copper);
-    expectExactlyOneCard(player.hand, Copper);
+    expectExactlyOneCard(player.getHand(), Copper);
   });
 
   it("shuffles discardCard when not enough cards in the deck", () => {
     const player = new Player([], [Copper], [Silver]);
     const drawn = player.drawNCards(1);
     expectExactlyOneCard(drawn, Copper);
-    expect(player.hand.length).toBe(2);
-    expect(player.hand[0]).toBe(Silver);
-    expect(player.hand[1]).toBe(Copper);
+    expect(player.getHand().length).toBe(2);
+    expect(player.getHand()[0]).toBe(Silver);
+    expect(player.getHand()[1]).toBe(Copper);
   });
 
   it("doesn't fail when not enough cards at all", () => {
     const player = new Player([], [Copper], []);
     const drawn = player.drawNCards(2);
     expectExactlyOneCard(drawn, Copper);
-    expectExactlyOneCard(player.hand, Copper);
+    expectExactlyOneCard(player.getHand(), Copper);
   });
 
   it("doesn't fail when no cards to shuffle", () => {
     const player = new Player([Copper], [], []);
     const drawn = player.drawNCards(2);
     expectExactlyOneCard(drawn, Copper);
-    expectExactlyOneCard(player.hand, Copper);
+    expectExactlyOneCard(player.getHand(), Copper);
   });
 
   it("plays a treasure card", () => {
@@ -42,25 +42,25 @@ describe("Player", () => {
     const player = new Player([], [], [Copper]);
     const discarded = player.discardACard(Copper);
     expect(discarded).toBe(Copper);
-    expectExactlyOneCard(player.discard, Copper);
+    expectExactlyOneCard(player.getDiscard(), Copper);
   });
 
   it("moves back a discarded card", () => {
     const player = new Player([Copper], [Silver], []);
     const movedBack = player.moveBackADiscardedCard(Silver);
     expect(movedBack).toBe(Silver);
-    expect(player.deck.length).toBe(2);
-    expect(player.deck[0]).toBe(Silver);
-    expect(player.deck[1]).toBe(Copper);
+    expect(player.getDeck().length).toBe(2);
+    expect(player.getDeck()[0]).toBe(Silver);
+    expect(player.getDeck()[1]).toBe(Copper);
   });
 
   it("puts a card from hand to deck", () => {
     const player = new Player([Copper], [], [Silver]);
     const movedBack = player.putACardFromHandOntoDeck(Silver);
     expect(movedBack).toBe(Silver);
-    expect(player.deck.length).toBe(2);
-    expect(player.deck[0]).toBe(Silver);
-    expect(player.deck[1]).toBe(Copper);
+    expect(player.getDeck().length).toBe(2);
+    expect(player.getDeck()[0]).toBe(Silver);
+    expect(player.getDeck()[1]).toBe(Copper);
   });
 
   it("trashes a card", () => {
@@ -74,29 +74,29 @@ describe("Player", () => {
     const player = new Player([], [], [Copper]);
     const setAside = player.setAsideACard(Copper);
     expect(setAside).toBe(Copper);
-    expectExactlyOneCard(player.setAside, Copper);
+    expectExactlyOneCard(player.getSetAside(), Copper);
   });
 
   it("buys a card", () => {
     const player = new Player([], [Silver], []);
     player.buyACard(Copper);
-    expect(player.discard.length).toBe(2);
-    expect(player.discard[0]).toBe(Silver);
-    expect(player.discard[1]).toBe(Copper);
+    expect(player.getDiscard().length).toBe(2);
+    expect(player.getDiscard()[0]).toBe(Silver);
+    expect(player.getDiscard()[1]).toBe(Copper);
   });
 
   it("gains a card", () => {
     const player = new Player([], [Silver], []);
     player.gainACard(Copper);
-    expect(player.discard.length).toBe(2);
-    expect(player.discard[0]).toBe(Silver);
-    expect(player.discard[1]).toBe(Copper);
+    expect(player.getDiscard().length).toBe(2);
+    expect(player.getDiscard()[0]).toBe(Silver);
+    expect(player.getDiscard()[1]).toBe(Copper);
   });
 
   it("gains a card to hand", () => {
     const player = new Player([], [Silver], []);
     player.gainACardToHand(Copper);
-    expectExactlyOneCard(player.hand, Copper);
+    expectExactlyOneCard(player.getHand(), Copper);
   });
 });
 
